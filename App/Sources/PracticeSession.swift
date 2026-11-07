@@ -52,11 +52,19 @@ struct PracticeSession: View {
             } else {
                 VStack(spacing: Space.l) {
                     progressHeader(plan: plan, word: word)
-                    SentenceText(word: word, revealed: revealed, size: 19)
+                    SentenceText(word: word, revealed: revealed, size: 21)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                    Spacer(minLength: 0)
-                    pad(word: word, available: CGSize(width: geo.size.width - Space.xl * 2, height: geo.size.height * 0.5))
-                    Spacer(minLength: 0)
+                    // 半紙に文鎮を置いた上で書く
+                    ZStack(alignment: .top) {
+                        Hanshi()
+                            .clipShape(RoundedRectangle(cornerRadius: Radius.tiny, style: .continuous))
+                            .overlay(RoundedRectangle(cornerRadius: Radius.tiny, style: .continuous).stroke(Palette.line, lineWidth: 0.6))
+                            .softShadow()
+                        pad(word: word, available: CGSize(width: geo.size.width - Space.xl * 2 - Space.l * 2, height: geo.size.height * 0.48))
+                            .frame(maxHeight: .infinity)
+                        Bunchin().frame(width: 130).offset(y: -4)
+                    }
+                    .frame(maxHeight: .infinity)
                     controls(word: word)
                 }
                 .padding(.horizontal, Space.xl)

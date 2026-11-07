@@ -10,7 +10,7 @@ struct WordDetailView: View {
 
     var body: some View {
         let state = model.progress.states[word.id]
-        let visible = model.isInkVisible(word.id)
+        let visible = model.isInkVisible(word.id) || model.ink[word.id] == nil
         ScrollView {
             VStack(alignment: .leading, spacing: Space.xl) {
                 HStack {

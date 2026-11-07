@@ -82,7 +82,7 @@ struct TodayCover: View {
 
     private var header: some View {
         VStack(alignment: .leading, spacing: 2) {
-            Text(model.today.date().formatted(.dateTime.month(.defaultDigits).day().weekday(.abbreviated)))
+            Text(model.today.japaneseShort)
                 .font(Typo.serif(30))
                 .kerning(-1)
                 .foregroundStyle(Palette.ink)

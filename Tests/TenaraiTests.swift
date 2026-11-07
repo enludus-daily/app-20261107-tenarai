@@ -297,3 +297,13 @@ struct AppModelTests {
         #expect(!model.todayPlan.isDone)
     }
 }
+
+struct DayFormatTests {
+    @Test func japaneseDatesUseKanjiUnits() {
+        let calendar = Calendar.current
+        let date = calendar.date(from: DateComponents(year: 2026, month: 11, day: 7, hour: 12))!
+        let day = Day(date)
+        #expect(day.japaneseLong == "2026年11月7日")
+        #expect(day.japaneseShort == "11月7日（土）")
+    }
+}

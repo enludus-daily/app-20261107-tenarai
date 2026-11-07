@@ -95,7 +95,7 @@ struct TodaySheet: View {
         ZStack(alignment: .top) {
             VStack(alignment: .leading, spacing: Space.l) {
                 HStack(alignment: .firstTextBaseline) {
-                    Text(plan.day.date().formatted(.dateTime.year().month(.defaultDigits).day()))
+                    Text(plan.day.japaneseLong)
                         .font(Typo.serif(15)).foregroundStyle(Palette.ink)
                     Spacer()
                     SmallLabel("手習い帖")

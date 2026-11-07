@@ -19,6 +19,19 @@ struct Day: Hashable, Comparable, Codable, Sendable {
     }
 
     static func < (lhs: Day, rhs: Day) -> Bool { lhs.index < rhs.index }
+
+    /// 「11月7日（土）」
+    var japaneseShort: String { Self.format("M月d日（E）", day: self) }
+    /// 「2026年11月7日」
+    var japaneseLong: String { Self.format("y年M月d日", day: self) }
+
+    private static func format(_ pattern: String, day: Day) -> String {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ja_JP")
+        formatter.calendar = Calendar(identifier: .gregorian)
+        formatter.dateFormat = pattern
+        return formatter.string(from: day.date())
+    }
 }
 
 /// 自分でつける丸

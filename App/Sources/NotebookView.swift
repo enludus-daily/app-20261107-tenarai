@@ -154,7 +154,7 @@ struct NotebookView: View {
 
     private func tile(_ word: Word) -> some View {
         let state = model.progress.states[word.id]
-        let visible = model.isInkVisible(word.id)
+        let visible = model.isInkVisible(word.id) || model.ink[word.id] == nil
         return Button { detail = word } label: {
             VStack(alignment: .leading, spacing: 6) {
                 HStack(alignment: .top) {
