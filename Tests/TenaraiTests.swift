@@ -212,10 +212,10 @@ struct InkTests {
 
 /// 記録を覚えておく偽物
 final class FakeStore: ProgressStore, @unchecked Sendable {
-    var progress: Progress?
+    var progress: PracticeLog?
     var ink: [String: InkSheet] = [:]
-    func loadProgress() -> Progress? { progress }
-    func saveProgress(_ progress: Progress) { self.progress = progress }
+    func loadProgress() -> PracticeLog? { progress }
+    func saveProgress(_ progress: PracticeLog) { self.progress = progress }
     func loadInk() -> [String: InkSheet] { ink }
     func saveInk(_ ink: [String: InkSheet]) { self.ink = ink }
 }
@@ -262,7 +262,7 @@ struct AppModelTests {
 
     @Test func freeUsersSeeTheLatestThirtyInkSheets() {
         let store = FakeStore()
-        var progress = Progress()
+        var progress = PracticeLog()
         let base = Day(Date(timeIntervalSinceReferenceDate: 815_000_000))
         for (i, word) in WordBook.words(in: .basic).prefix(40).enumerated() {
             var state = CardState(due: base)

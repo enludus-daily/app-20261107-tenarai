@@ -5,7 +5,7 @@ import SwiftUI
 enum AppTab: Hashable { case today, notebook, settings }
 
 /// 保存する記録（UserDefaults に JSON で 1 つ）
-struct Progress: Codable, Equatable, Sendable {
+struct PracticeLog: Codable, Equatable, Sendable {
     var states: [String: CardState] = [:]
     var days: [Day: DayRecord] = [:]
     var plan: DayPlan?
@@ -15,8 +15,8 @@ struct Progress: Codable, Equatable, Sendable {
 
 /// 端末の中だけに保存する（UserDefaults と Application Support のファイル）。テストでは差し替える
 protocol ProgressStore: Sendable {
-    func loadProgress() -> Progress?
-    func saveProgress(_ progress: Progress)
+    func loadProgress() -> PracticeLog?
+    func saveProgress(_ progress: PracticeLog)
     func loadInk() -> [String: InkSheet]
     func saveInk(_ ink: [String: InkSheet])
 }
@@ -24,12 +24,12 @@ protocol ProgressStore: Sendable {
 struct DeviceStore: ProgressStore {
     private let key = "tenarai.progress.v1"
 
-    func loadProgress() -> Progress? {
+    func loadProgress() -> PracticeLog? {
         guard let data = UserDefaults.standard.data(forKey: key) else { return nil }
-        return try? JSONDecoder().decode(Progress.self, from: data)
+        return try? JSONDecoder().decode(PracticeLog.self, from: data)
     }
 
-    func saveProgress(_ progress: Progress) {
+    func saveProgress(_ progress: PracticeLog) {
         if let data = try? JSONEncoder().encode(progress) { UserDefaults.standard.set(data, forKey: key) }
     }
 
@@ -52,8 +52,8 @@ struct DeviceStore: ProgressStore {
 
 /// 記録を持たない（スクリーンショット用・テスト用）
 struct MemoryStore: ProgressStore {
-    func loadProgress() -> Progress? { nil }
-    func saveProgress(_ progress: Progress) {}
+    func loadProgress() -> PracticeLog? { nil }
+    func saveProgress(_ progress: PracticeLog) {}
     func loadInk() -> [String: InkSheet] { [:] }
     func saveInk(_ ink: [String: InkSheet]) {}
 }
@@ -70,7 +70,7 @@ final class AppModel {
 
     var tab: AppTab = .today
     var showPaywall = false
-    private(set) var progress: Progress
+    private(set) var progress: PracticeLog
     private(set) var ink: [String: InkSheet]
     let purchases: PurchaseStore
     let screenshotScene: String?
@@ -91,7 +91,7 @@ final class AppModel {
         self.clock = clock
         self.defaults = defaults
         hapticsOn = !defaults.bool(forKey: "tenarai.hapticsOff")
-        progress = chosen.loadProgress() ?? Progress()
+        progress = chosen.loadProgress() ?? PracticeLog()
         ink = chosen.loadInk()
         purchases = PurchaseStore(productIDs: [Self.proID], proProductIDs: [Self.proID])
         onboardingDone = screenshotScene.map { $0 != "onboarding" } ?? defaults.bool(forKey: "tenarai.onboardingDone")
@@ -243,7 +243,7 @@ final class AppModel {
 
     // MARK: - 内部
 
-    func replaceForSample(progress: Progress, ink: [String: InkSheet]) {
+    func replaceForSample(progress: PracticeLog, ink: [String: InkSheet]) {
         self.progress = progress
         self.ink = ink
     }

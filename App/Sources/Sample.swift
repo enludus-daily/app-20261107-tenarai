@@ -17,7 +17,7 @@ enum Sample {
             model.tab = .today
         }
 
-        var progress = Progress()
+        var progress = PracticeLog()
         let words = WordBook.words(in: .basic)
         // 45 日ぶんの稽古（ところどころ休み）
         var stateIndex = 0
