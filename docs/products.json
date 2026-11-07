@@ -3,15 +3,15 @@
   "products": [
     {
       "type": "NON_CONSUMABLE",
-      "productId": "com.enludus.daily.template.pro",
+      "productId": "com.enludus.daily.005.pro",
       "referenceName": "Pro",
       "price": 480,
       "familySharable": true,
-      "reviewNote": "Pro を買うと、すべての〇〇と詳しい振り返りが使えます。課金の画面は設定 > Pro から開けます。",
+      "reviewNote": "Pro を買うと、追加の束 4 つ（季節と暮らし・手紙と仕事・四字熟語・難書の字、計 200 語）、苦手だけの稽古、1 日 20 字、書いた字をすべて見返す機能が使えます。課金の画面は 設定 > Pro でできること、または今日の稽古を書き終えたあとに開きます。",
       "reviewScreenshot": "docs/iap/paywall.png",
       "localizations": [
-        {"locale": "ja", "name": "Pro", "description": "すべての〇〇と詳しい振り返り"},
-        {"locale": "en-US", "name": "Pro", "description": "All 〇〇 and detailed reviews"}
+        {"locale": "ja", "name": "手習い帖 Pro", "description": "追加の束4つ・苦手だけの稽古・帖を全部見返す"},
+        {"locale": "en-US", "name": "Tenarai Pro", "description": "Four extra word packs, weak-word drills, full notebook"}
       ]
     }
   ]

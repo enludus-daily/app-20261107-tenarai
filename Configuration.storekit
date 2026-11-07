@@ -1,0 +1,38 @@
+{
+  "identifier" : "5C2D3E4F",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "480",
+      "familyShareable" : true,
+      "internalID" : "6754000501",
+      "localizations" : [
+        {
+          "description" : "追加の束4つ・苦手だけの稽古・帖を全部見返す",
+          "displayName" : "手習い帖 Pro",
+          "locale" : "ja"
+        }
+      ],
+      "productID" : "com.enludus.daily.005.pro",
+      "referenceName" : "Pro",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6754000500",
+    "_locale" : "ja",
+    "_storefront" : "JPN",
+    "_storeKitErrors" : [
+
+    ]
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

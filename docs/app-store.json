@@ -1,14 +1,14 @@
 {
   "_doc": "App Store Connect に API で入れる情報（.github/workflows/asc.yml の metadata が読む）。文字数：name・subtitle 30、keywords 100（カンマ区切り）、promotionalText 170、description 4000。カテゴリの ID は EDUCATION・PRODUCTIVITY・UTILITIES・LIFESTYLE・HEALTH_AND_FITNESS など。審査への提出と App プライバシーの申告は本人が行う。",
   "locale": "ja",
-  "name": "",
-  "subtitle": "",
-  "primaryCategory": "",
-  "secondaryCategory": "",
-  "supportUrl": "https://github.com/enludus-daily/__REPO__/issues",
-  "privacyPolicyUrl": "https://github.com/enludus-daily/__REPO__/blob/main/PRIVACY.md",
-  "keywords": "",
-  "promotionalText": "",
-  "description": "",
-  "whatToTest": ""
+  "name": "手習い帖 - 読めるのに書けない漢字",
+  "subtitle": "指で書いて、お手本と見比べる稽古帖",
+  "primaryCategory": "EDUCATION",
+  "secondaryCategory": "REFERENCE",
+  "supportUrl": "https://github.com/enludus-daily/app-20261107-tenarai/issues",
+  "privacyPolicyUrl": "https://github.com/enludus-daily/app-20261107-tenarai/blob/main/PRIVACY.md",
+  "keywords": "漢字,書き取り,手書き,大人,脳トレ,漢検,四字熟語,難読,ペン字,美文字,手紙,一筆箋,復習,暗記,語彙",
+  "promotionalText": "憂鬱・曖昧・挨拶…読めるのに書けない字を、1日10字。升目に指で書き、お手本を薄墨で重ねて自分の目で見比べます。書いた字は自分の筆跡のまま帖に残ります。",
+  "description": "キーボードに任せているうちに、手が忘れてしまった字を取り戻す、大人のための書き取りの稽古帖です。\n\n■ 書いて、重ねて、見比べる\n例文の空欄に入る「よみ」を見て、習字帳のような升目に指で書きます。書き終えたら、お手本を薄墨で重ねて表示。自動の判定はしません。とめ・はね・はらいまで自分の目で見比べて、「書けた（はなまる）」「惜しい（△）」「書けなかった」の丸を自分でつけます。\n\n■ 忘れかけた字が、ちょうどよく戻ってくる\n書けなかった字は明日、書けた字は 1・3・7・14・30・60 日とあけて戻ってきます。7 日あけて書けた字が「書ける字」に数えられます。\n\n■ 書いた字が、帖になる\n稽古で書いた字は、自分の筆跡のまま「手習い帖」に綴じられます。稽古した日の暦、続けた日数、苦手な字、束ごとの進み具合をいつでも見返せます。今日書いた字を並べた「今日の一枚」は画像にして共有できます。\n\n■ iPhone Duo の大きな画面で見開きに\n内側の大きな画面では、左のページに例文、右のページに大きな升目の見開きになります。ほかの iPhone でも縦に並べて使えます。\n\n■ 無料で使えること\n・基本の束「読めるのに書けない」163 語（憂鬱・曖昧・挨拶・齟齬・躊躇 など）\n・毎日の稽古（1 日 5・10・15 字）、間隔をあけた復習\n・手習い帖（新しい 30 語の筆跡）、稽古の暦、今日の一枚の共有\n・毎日のお知らせ\n広告はありません。\n\n■ 手習い帖 Pro（買い切り）\n・追加の束 4 つ、計 200 語：季節と暮らし（時雨・氷柱・注連縄…）、手紙と仕事（拝啓・御中・査収…）、四字熟語（紆余曲折・臥薪嘗胆…）、難書の字（薔薇・檸檬・顰蹙…）\n・苦手だけの稽古\n・1 日 20 字まで\n・書いた字をすべて、自分の筆跡で見返す\nファミリー共有に対応しています。\n\n■ プライバシー\n書いた字と記録は、この iPhone の中だけに保存します。アカウント・広告・解析はなく、どこにも送りません。",
+  "whatToTest": "今日の稽古で升目に指で書き、「お手本と見比べる」でお手本が重なること、丸をつけると次の字に進むこと、10 字を終えると「今日の一枚」が出ること。手習い帖に書いた字が残ること。設定 > Pro でできること から購入と「購入を復元」。iPhone Duo では内側の画面で見開きになること。"
 }
